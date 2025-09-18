@@ -51,6 +51,6 @@ HEREDOC;
   $class = str_replace('_', '-', $field);
   $text = ts('Privacy flag: %1', [1 => $titles[$field]]);
   return <<<HEREDOC
-<span class="fa-stack privacy-flag $class" title="$text" aria-hidden="true"><i class="crm-i {$icons[$field]} fa-stack-1x"></i><i class="crm-i fa-ban fa-stack-2x font-red"></i></span><span class="sr-only">$text</span>
+<span class="fa-stack privacy-flag $class" title="$text" aria-hidden="true"><i class="crm-i {$icons[$field]} fa-stack-1x" role="img" aria-hidden="true"></i><i class="crm-i fa-ban fa-stack-2x font-red" role="img" aria-hidden="true"></i></span><span class="sr-only">$text</span>
 HEREDOC;
 }
