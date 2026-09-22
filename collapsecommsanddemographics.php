@@ -202,19 +202,19 @@ function collapsecommsanddemographics_civicrm_pageRun(&$page)
     $pageName = $page->getVar('_name');
     $pageAction = $page->getVar('_action');
     if ($pageName == 'CRM_Contact_Page_View_Summary' && ($pageAction == CRM_Core_Action::BROWSE || $pageAction == CRM_Core_Action::VIEW)) {
-        CRM_Core_Region::instance('contact-comm-pref')->update('default', array(
+        CRM_Core_Region::instance('contact-comm-pref')->update('default', [
             'disabled' => TRUE,
-        ));
-        CRM_Core_Region::instance('contact-comm-pref')->add(array(
+        ]);
+        CRM_Core_Region::instance('contact-comm-pref')->add([
             'template' => 'CRM/Collapsecommsanddemographics/Page/CollapseComms.tpl',
-        ));
+        ]);
 
-        CRM_Core_Region::instance('contact-demographic')->update('default', array(
+        CRM_Core_Region::instance('contact-demographic')->update('default', [
             'disabled' => TRUE,
-        ));
-        CRM_Core_Region::instance('contact-demographic')->add(array(
+        ]);
+        CRM_Core_Region::instance('contact-demographic')->add([
             'template' => 'CRM/Collapsecommsanddemographics/Page/CollapseDemographics.tpl',
-        ));
+        ]);
 
         CRM_Core_Resources::singleton()->addStyle('
             #crm-container .collapsedcommsanddemos { margin-bottom: 10px; overflow: auto; } 
